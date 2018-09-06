@@ -1,0 +1,125 @@
+@font-face {
+  font-family: futuraBook;
+  src: url(../media/fonts/FuturaBook.ttf); }
+@font-face {
+  font-family: futuraHeavy;
+  src: url(../media/fonts/FuturaHeavy.ttf); }
+@font-face {
+  font-family: futuraExtraBlack;
+  src: url(../media/fonts/FuturaExtraBlack.ttf); }
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #f2f2f2; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+
+#master {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: auto; }
+
+#menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+  position: absolute;
+  top: 110px;
+  right: 110px;
+  z-index: 10; }
+
+.menu--logo {
+  display: flex;
+  width: 220px;
+  height: 80px;
+  background-image: url("../media/img/logo.svg");
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.menu--nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-direction: column;
+  font-family: "futuraBook";
+  font-size: 18px; }
+
+.menu--nav a {
+  margin: 5px 0;
+  padding: 2px 6px;
+  transition: 0.12s ease-in; }
+
+.menu--nav a:hover {
+  background-color: #040505;
+  color: #FFF; }
+
+.container {
+  display: block;
+  width: auto;
+  position: absolute;
+  top: 140px;
+  left: 180px;
+  right: 180px;
+  bottom: 140px;
+  overflow: hidden; }
+
+#landing {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url("../media/img/landing_background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: hidden; }
+
+.landing--pitch {
+  display: block;
+  text-align: center;
+  padding: 8px 12px;
+  background-color: #040505;
+  color: #FFF;
+  left: 110px;
+  bottom: 110px;
+  font-family: futuraHeavy;
+  font-size: 36px;
+  position: absolute;
+  z-index: 10; }
+
+.anim {
+  font-family: futuraHeavy;
+  color: #006DC1;
+  position: relative;
+  width: auto;
+  margin: 0 auto;
+  border-right: 2px solid #006DC1;
+  font-size: 100%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%); }
+
+.changingWord {
+  color: #006DC1; }
+
+/* Animation */
+.anim {
+  animation: blinkTextCursor 500ms steps(40) infinite normal; }
+
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: #006DC1; }
+  to {
+    border-right-color: transparent; } }
+
+/*# sourceMappingURL=style.css.map */

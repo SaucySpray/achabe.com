@@ -1,0 +1,70 @@
+.container {
+    display: block;
+    width: auto;
+    position: absolute;
+    top: 140px;
+    left: 180px;
+    right: 180px;
+    bottom: 140px;
+    overflow: hidden;
+}
+
+#landing {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url("../media/img/landing_background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.landing--pitch {
+    display: block;
+    text-align: center;
+    padding: 8px 12px;
+    background-color: $darkblue;
+    color: $white;
+    left: 110px;
+    bottom: 110px;
+    font-family: futuraHeavy;
+    font-size: 36px;
+    position: absolute;
+    z-index: 10;
+}
+
+.anim {
+    font-family: futuraHeavy;
+    color: $blue;
+    position: relative;
+    width: auto;
+    margin: 0 auto;
+    border-right: 2px solid $blue;
+    font-size: 100%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+}
+
+.changingWord {
+    color: $blue;
+}
+
+/* Animation */
+
+.anim {
+    animation: blinkTextCursor 500ms steps(40) infinite normal;
+}
+
+@keyframes blinkTextCursor {
+    from {
+        border-right-color: $blue;
+    }
+    to {
+        border-right-color: transparent;
+    }
+}
