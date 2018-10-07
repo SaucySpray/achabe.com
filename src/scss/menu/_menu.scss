@@ -1,39 +1,59 @@
 #menu {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    flex-direction: column;
-    position: absolute;
-    top: 110px;
-    right: 110px;
-    z-index: 10;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+  position: absolute;
+  top: 110px;
+  right: 110px;
+  z-index: 10;
 }
 
 .menu--logo {
-    display: flex;
-    width: 220px;
-    height: 80px;
-    background-image: url("../media/img/logo.svg");
-    background-size: cover;
-    background-repeat: no-repeat;
+  display: flex;
+  width: 220px;
+  height: 80px;
+  background-image: url("../media/img/logo.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .menu--nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    flex-direction: column;
-    font-family: "futuraBook";
-    font-size: 18px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-direction: column;
+  font-family: "futuraBook", "Arial", sans-serif;
+  font-size: 18px;
 }
 
 .menu--nav a {
-    margin: 5px 0;
-    padding: 2px 6px;
-    transition: 0.12s ease-in;
+  position: relative;
+  width: auto;
+  margin: 5px 0;
+  padding: 0px 2px 0px 10px;
+  transition: 0.12s ease-in;
+  overflow: hidden;
+}
+
+.menu--nav a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -150%;
+  background: $darkblue;
+  height: 100%;
+  width: 119%;
+  transform: skew(12deg);
+  z-index: -1;
+  transition: all .2s linear;
 }
 
 .menu--nav a:hover {
-    background-color: $darkblue;
-    color: $white;
+  color: $white;
+  transition-delay: 0.08s
+}
+
+.menu--nav a:hover::after {
+    right: -16px;
 }

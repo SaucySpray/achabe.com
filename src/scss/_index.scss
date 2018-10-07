@@ -1,21 +1,80 @@
-html, body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    background-color: $cream;
+html,
+body {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: $cream;
+  overflow: hidden;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 #master {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.scroll {
+  position: absolute;
+  z-index: 500;
+  opacity: 0;
+  bottom: 0;
+  width: 120%;
+  height: 0;
+  transition: height 0.5s;
+}
+
+.scroll_0 {
+  background-color: $darkblue;
+}
+
+.scroll_1 {
+  background-color: $cream;
+}
+
+.scroll_2 {
+  background-color: $blue;
+}
+
+.animate {
+  opacity: 1;
+  height: 110vh;
+}
+
+.animate-off {
+  top: 0;
+  height: 0;
+}
+
+.messageTransition {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  color: $white;
+  z-index: 1000;
+  position: absolute;
+  font-family: "futuraHeavy", "Arial", sans-serif;
+  font-size: 52px;
+  transition: all 0.8s ease-out;
+}
+
+.messageVisible {
+  display: flex;
+}
+
+.messageHidden {
+  display: none;
 }
