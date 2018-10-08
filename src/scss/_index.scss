@@ -8,6 +8,7 @@ body {
   list-style: none;
   background-color: $cream;
   overflow: hidden;
+  user-select: none;
 }
 
 a {
