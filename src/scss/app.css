@@ -16,7 +16,8 @@ body {
   padding: 0;
   list-style: none;
   background-color: #f2f2f2;
-  overflow: hidden; }
+  overflow: hidden;
+  user-select: none; }
 
 a {
   color: inherit;
@@ -177,7 +178,8 @@ a {
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
-  transform: translateY(-50%); }
+  transform: translateY(-50%);
+  cursor: text; }
 
 .changingWord {
   color: #006DC1; }

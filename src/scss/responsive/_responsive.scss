@@ -1,0 +1,58 @@
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+  .container #landing {
+    padding-left: 80%;
+    background-position: left center;
+  }
+}
+
+@media screen and (min-width: 770px) and (max-width: 1024px) {
+  .container {
+    left: 130px;
+    right: 130px;
+  }
+  .container #landing {
+    padding-left: 70%;
+    background-position: left center;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 769px) {
+  .container {
+    left: 130px;
+    right: 130px;
+  }
+  .container #landing {
+    width: 160%;
+    height: 160%;
+    background-position: bottom left;
+  }
+}
+
+@media screen and (min-width: 260px) and (max-width: 480px) {
+  .container {
+    left: 0;
+    right: 0;
+  }
+
+  .container #landing {
+    width: 160%;
+    height: 160%;
+    background-position: bottom left;
+  }
+
+  #menu {
+    top: 20px;
+    right: 8px;
+    transform: scale(0.8)
+  }
+
+  #menu .menu--nav {
+    flex-direction: row;
+  }
+
+  .landing--pitch {
+    left: 0;
+    bottom: 50px;
+    font-size: 24.5px;
+  }
+}
