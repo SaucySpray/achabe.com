@@ -1,22 +1,14 @@
 #menu {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-around;
   align-items: flex-end;
   flex-direction: column;
+  width: 12rem;
+  height: 10rem;
   position: fixed;
   top: 110px;
   right: 110px;
   z-index: 10;
-}
-
-.menu--logo {
-  display: flex;
-  width: 220px;
-  height: 80px;
-  background-image: url("../media/img/logo.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  cursor: pointer;
 }
 
 .menu--nav {
@@ -47,12 +39,12 @@
   width: 119%;
   transform: skew(12deg);
   z-index: -1;
-  transition: all .2s linear;
+  transition: cubic-bezier(0.65, 0.01, 0.46, 1) 0.2s;
 }
 
 .menu--nav .nav--btn:hover {
   color: $white;
-  transition-delay: 0.08s;
+  transition: ease-in 0.2s;
   cursor: pointer;
 }
 

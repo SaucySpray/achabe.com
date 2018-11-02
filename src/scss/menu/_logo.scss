@@ -1,0 +1,63 @@
+.menu--logo {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    width: 7.6rem;
+    height: 2.3rem;
+    position: absolute;
+    top: 0;
+    font-family: "futuraExtraBlack";
+    transform-origin: bottom right;
+    transform: scale(2.2);
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  /* LOGO UP */
+  
+  .logo--up {
+    position: absolute;
+    top: 0;
+    color: #FFF;
+    text-transform: uppercase;
+  }
+  
+  .logo--up::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #040505;
+    height: 100%;
+    width: 101%;
+    z-index: -1;
+    transition: cubic-bezier(0.65, 0.01, 0.46, 1) 0.2s;
+  }
+  
+  .menu--logo:hover .logo--up::after { right: -110%; }
+  .menu--logo:hover .logo--up { color: #040505; }
+  
+  /* LOGO DOWN */
+  
+  .logo--down {
+    position: absolute;
+    top: 1rem;
+    transition: 0.2s ease-in;
+  }
+  
+  .logo--down::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: -110%;
+    background: #040505;
+    height: 92%;
+    width: 100%;
+    z-index: -1;
+    transition: cubic-bezier(0.65, 0.01, 0.46, 1) 0.3s;
+  }
+  
+  .menu--logo:hover .logo--down::after { right: 0; }
+  .menu--logo:hover .logo--down { color: #FFF; }
