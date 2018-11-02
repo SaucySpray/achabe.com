@@ -22,6 +22,7 @@
   position: absolute;
   overflow-x: hidden;
   overflow-y: hidden;
+  will-change: transform;
 }
 
 .landing--pitch {

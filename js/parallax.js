@@ -1,4 +1,4 @@
-const background = document.querySelector("#landing");
+const landing = document.querySelector("#landing");
 const page = document.querySelector("#master");
 let gravity = 0.35;
 const pageWidth = window.innerWidth / gravity;
@@ -8,5 +8,5 @@ page.addEventListener("mousemove", (e) => {
   const mouseX = e.clientX / pageWidth;
   const mouseY = e.clientY / pageHeight;
 
-  background.style.transform = `translate3d(-${mouseX}%, -${mouseY}%, 0)`;
+  landing.style.transform = `translate3d(-${mouseX}%, -${mouseY}%, 0)`;
 });

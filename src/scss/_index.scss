@@ -7,8 +7,8 @@ body {
   padding: 0;
   list-style: none;
   background-color: $cream;
-  overflow: hidden;
   user-select: none;
+  overflow: hidden;
 }
 
 a {
@@ -16,12 +16,11 @@ a {
   text-decoration: none;
 }
 
-#master {
+.page--1 {
   display: block;
   position: relative;
   width: 100%;
   height: 100%;
-  overflow: auto;
 }
 
 .scroll {

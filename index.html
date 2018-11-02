@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127593353-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -19,22 +18,29 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="master">
-            <div class="container">
-                <div id="landing"></div>
-            </div>
-            <div id="menu">
-                <div class="menu--logo"></div>
-                <div class="menu--nav">
-                    <a href="#works" class="nav--btn" data-page="0">works</a>
-                    <a href="#skills" class="nav--btn" data-page="1">skills</a>
-                    <a href="#contact" class="nav--btn" data-page="2">contact</a>
-                </div>
-            </div>
-            <div class="landing--pitch">I'm a creative <span class="anim">developer</span>.</div>
+    <!-- Fixed Menu -->
+    <div id="menu">
+        <div class="menu--logo"></div>
+        <div class="menu--nav">
+            <a href="#works" class="nav--btn" data-page="0">works</a>
+            <a href="#skills" class="nav--btn" data-page="1">skills</a>
+            <a href="#contact" class="nav--btn" data-page="2">contact</a>
+        </div>
     </div>
+    <!-- Landing -->
+    <div class="page--1">
+        <div class="container">
+            <div id="landing"></div>
+        </div>
+        <div class="landing--pitch">I'm a creative <span class="anim">developer</span>.</div>
+    </div>
+    <!-- Works -->
+    <!-- Skills -->
+    <!-- Contact -->
+    <!-- Animations -->
     <div class="scrollTransition"></div>
     <div class="messageTransition messageHidden"></div>
+    <!-- Scripts -->
     <script src="js/typescript.js"></script>
     <script src="js/parallax.js"></script>
     <script src="js/dynamicScroll.js"></script>
