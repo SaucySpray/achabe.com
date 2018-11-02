@@ -3,7 +3,7 @@
   justify-content: flex-end;
   align-items: flex-end;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
   top: 110px;
   right: 110px;
   z-index: 10;
@@ -16,6 +16,7 @@
   background-image: url("../media/img/logo.svg");
   background-size: cover;
   background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 .menu--nav {
@@ -27,7 +28,7 @@
   font-size: 18px;
 }
 
-.menu--nav a {
+.menu--nav .nav--btn {
   position: relative;
   width: auto;
   margin: 5px 0;
@@ -36,7 +37,7 @@
   overflow: hidden;
 }
 
-.menu--nav a::after {
+.menu--nav .nav--btn::after {
   content: "";
   position: absolute;
   top: 0;
@@ -49,11 +50,12 @@
   transition: all .2s linear;
 }
 
-.menu--nav a:hover {
+.menu--nav .nav--btn:hover {
   color: $white;
-  transition-delay: 0.08s
+  transition-delay: 0.08s;
+  cursor: pointer;
 }
 
-.menu--nav a:hover::after {
+.menu--nav .nav--btn:hover::after {
     right: -16px;
 }

@@ -1,22 +1,27 @@
+// Variables
+
 const scrollAnim = {
   appendMessage: document.querySelector(".messageTransition"),
   appendDiv: document.querySelector(".scrollTransition"),
   btns: document.querySelectorAll(".nav--btn"),
   transitionDivs: [],
-  messages : ["Works", "Skills", "Contact"],
+  messages : ["Home", "Works", "Skills", "Contact"],
 }
 
+const html = document.querySelector('html')
 let btnID = -1;
 
+// Show message
+
 function showMessage(index) {
-  scrollAnim.appendMessage.classList.remove("messageHidden");
+  scrollAnim.appendMessage.classList.toggle("messageHidden");
   scrollAnim.appendMessage.innerHTML = scrollAnim.messages[index];
-  scrollAnim.appendMessage.classList.add("messageVisible");
   setTimeout(() => { scrollAnim.appendMessage.innerHTML = "";
-    scrollAnim.appendMessage.classList.add("messageHidden");
-    scrollAnim.appendMessage.classList.remove("messageVisible");
+    scrollAnim.appendMessage.classList.toggle("messageHidden");
   } , 1000)
 }
+
+// Events on click menu elements
 
 for (let i=0; i<scrollAnim.btns.length; i++) {
   scrollAnim.btns[i].addEventListener("click", () => {
@@ -25,7 +30,14 @@ for (let i=0; i<scrollAnim.btns.length; i++) {
       showMessage(scrollAnim.btns[i].dataset.page)
     }, 500)
   });
+  scrollAnim.btns[i].addEventListener('click', () => {
+    setTimeout(() => {
+      html.scrollTop = window.innerHeight * i
+    }, 400)
+  })
 }
+
+// Create divs
 
 function createDiv(){
   return new Promise((resolve, reject) => {
@@ -43,6 +55,8 @@ function createDiv(){
   })
 }
 
+// Move created divs
+
 function movingDiv(){
   for (let i=0; i < scrollAnim.transitionDivs.length; i++) {
     setTimeout(() => {
@@ -51,6 +65,8 @@ function movingDiv(){
   }
   removeDiv()
 }
+
+// Delete divs after animation
 
 function removeDiv(){
   setTimeout(() => {

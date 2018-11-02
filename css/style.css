@@ -16,21 +16,23 @@ body {
   padding: 0;
   list-style: none;
   background-color: #f2f2f2;
-  user-select: none;
+  user-select: none; }
+
+body {
   overflow: hidden; }
 
 a {
   color: inherit;
   text-decoration: none; }
 
-.page--1 {
+.page {
   display: block;
   position: relative;
-  width: 100%;
-  height: 100%; }
+  width: 100vw;
+  height: 100vh; }
 
 .scroll {
-  position: absolute;
+  position: fixed;
   z-index: 500;
   opacity: 0;
   bottom: 0;
@@ -59,19 +61,16 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
   color: #FFF;
   z-index: 1000;
-  position: absolute;
   font-family: "futuraHeavy", "Arial", sans-serif;
   font-size: 52px;
   transition: all 0.8s ease-out; }
-
-.messageVisible {
-  display: flex; }
 
 .messageHidden {
   display: none; }
@@ -81,7 +80,7 @@ a {
   justify-content: flex-end;
   align-items: flex-end;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
   top: 110px;
   right: 110px;
   z-index: 10; }
@@ -92,7 +91,8 @@ a {
   height: 80px;
   background-image: url("../media/img/logo.svg");
   background-size: cover;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  cursor: pointer; }
 
 .menu--nav {
   display: flex;
@@ -102,7 +102,7 @@ a {
   font-family: "futuraBook", "Arial", sans-serif;
   font-size: 18px; }
 
-.menu--nav a {
+.menu--nav .nav--btn {
   position: relative;
   width: auto;
   margin: 5px 0;
@@ -110,7 +110,7 @@ a {
   transition: 0.12s ease-in;
   overflow: hidden; }
 
-.menu--nav a::after {
+.menu--nav .nav--btn::after {
   content: "";
   position: absolute;
   top: 0;
@@ -122,11 +122,12 @@ a {
   z-index: -1;
   transition: all .2s linear; }
 
-.menu--nav a:hover {
+.menu--nav .nav--btn:hover {
   color: #FFF;
-  transition-delay: 0.08s; }
+  transition-delay: 0.08s;
+  cursor: pointer; }
 
-.menu--nav a:hover::after {
+.menu--nav .nav--btn:hover::after {
   right: -16px; }
 
 .container {
