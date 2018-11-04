@@ -1,3 +1,5 @@
+// Variables
+
 const wordsList = ["developer", "designer", "illustrator", "photographer", "painter"]
 const changingWord = document.querySelector(".anim")
 let count = 0
@@ -5,6 +7,8 @@ let index = 0
 let word = selectWord()
 let toReturn = ""
 let untype = false
+
+// Functions
 
 function selectWord() {
     if (count >= wordsList.length - 1) {
