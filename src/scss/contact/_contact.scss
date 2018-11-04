@@ -1,0 +1,35 @@
+.page--4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.contact--img {
+  width: 30%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("../media/img/contact_background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 20%;
+}
+
+.contact--content {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 36%;
+  height: 40%;
+  font-family: "futuraBook", "Arial", sans-serif;
+  font-size: 18px;
+}
+
+.contact--content h2 {
+  font-family: "futuraHeavy", "Arial", sans-serif;
+  font-size: 48px;
+  margin: 1rem 0;
+}
