@@ -273,8 +273,8 @@ a {
   justify-content: space-around;
   align-items: flex-start;
   flex-direction: column;
-  width: 36%;
-  height: 40%;
+  width: 34%;
+  height: 36%;
   font-family: "futuraBook", "Arial", sans-serif;
   font-size: 18px; }
 
@@ -282,6 +282,36 @@ a {
   font-family: "futuraHeavy", "Arial", sans-serif;
   font-size: 48px;
   margin: 1rem 0; }
+
+.content--social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 26%;
+  height: 8%; }
+
+.content--social .social {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.content--social .instagram {
+  background-image: url("../media/img/instagram.svg"); }
+
+.content--social .github {
+  background-image: url("../media/img/github.svg"); }
+
+.content--social .linkedin {
+  background-image: url("../media/img/linkedin.svg"); }
+
+.contact--content .copyclip {
+  cursor: pointer;
+  transition: cubic-bezier(0.65, 0.01, 0.46, 1) 0.2s; }
+
+.contact--content .copyclip:hover {
+  color: #006DC1; }
 
 @media screen and (min-width: 1025px) and (max-width: 1366px) {
   .container #landing {

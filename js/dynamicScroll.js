@@ -83,3 +83,21 @@ function removeDiv(){
     }, 1500)
   }, 300)
 }
+
+// ClipBoard
+
+const clipboard = new ClipboardJS('.copyclip');
+const copyclip = document.querySelector('.copyclip')
+
+clipboard.on('success', (e) => {
+  copyclip.classList.remove('copy-error')
+  copyclip.classList.add('copy-success')
+  e.clearSelection();
+});
+
+clipboard.on('error', (e) => {
+  copyclip.classList.remove('copy-success')
+  copyclip.classList.add('copy-error')
+  console.error('Action:', e.action);
+  console.error('Trigger:', e.trigger);
+});
