@@ -9,15 +9,18 @@ const scrollAnim = {
 }
 
 const html = document.querySelector('html')
-let btnID = -1;
+let windowHeight = window.innerHeight
+let currentSection = parseInt(sessionStorage.getItem("currentSection"))
+let btnID = -1
 
 // Show message
 
 function showMessage(index) {
-  scrollAnim.appendMessage.classList.toggle("messageHidden");
-  scrollAnim.appendMessage.innerHTML = scrollAnim.messages[index];
-  setTimeout(() => { scrollAnim.appendMessage.innerHTML = "";
-    scrollAnim.appendMessage.classList.toggle("messageHidden");
+  scrollAnim.appendMessage.classList.toggle("messageHidden")
+  scrollAnim.appendMessage.innerHTML = scrollAnim.messages[index]
+  setTimeout(() => {
+    scrollAnim.appendMessage.innerHTML = ""
+    scrollAnim.appendMessage.classList.toggle("messageHidden")
   } , 1000)
 }
 
@@ -25,17 +28,31 @@ function showMessage(index) {
 
 for (let i=0; i<scrollAnim.btns.length; i++) {
   scrollAnim.btns[i].addEventListener("click", () => {
-    createDiv().then(() => movingDiv()).catch(e => console.log(e));
+    createDiv().then(() => movingDiv()).catch(e => console.log(e))
     setTimeout(() => {
       showMessage(scrollAnim.btns[i].dataset.page)
     }, 500)
-  });
+  })
+  //fix position to selected content
   scrollAnim.btns[i].addEventListener('click', () => {
     setTimeout(() => {
-      html.scrollTop = window.innerHeight * i
-    }, 400)
+      html.scrollTop = windowHeight * i
+      currentSection = i
+      sessionStorage.setItem("currentSection", i)
+    }, 600)
   })
 }
+
+// Dynamic resize 
+
+const resizeHeight = () => {
+  html.scrollTop = windowHeight * currentSection
+}
+
+window.addEventListener('resize', () => {
+  windowHeight = window.innerHeight
+  resizeHeight()
+})
 
 // Create divs
 
@@ -43,10 +60,10 @@ function createDiv(){
   return new Promise((resolve, reject) => {
     if (scrollAnim.transitionDivs.length <= 0) {
       for (let i=0; i < 3; i++) {
-        scrollAnim.transitionDivs[i] = document.createElement("div");
-        scrollAnim.transitionDivs[i].classList.add(`scroll`,`scroll_${i}`);
-        scrollAnim.transitionDivs[i].dataset.index = i;
-        scrollAnim.appendDiv.appendChild(scrollAnim.transitionDivs[i]);
+        scrollAnim.transitionDivs[i] = document.createElement("div")
+        scrollAnim.transitionDivs[i].classList.add(`scroll`,`scroll_${i}`)
+        scrollAnim.transitionDivs[i].dataset.index = i
+        scrollAnim.appendDiv.appendChild(scrollAnim.transitionDivs[i])
       }
       resolve()
     } else {
@@ -92,12 +109,12 @@ const copyclip = document.querySelector('.copyclip')
 clipboard.on('success', (e) => {
   copyclip.classList.remove('copy-error')
   copyclip.classList.add('copy-success')
-  e.clearSelection();
-});
+  e.clearSelection()
+})
 
 clipboard.on('error', (e) => {
   copyclip.classList.remove('copy-success')
   copyclip.classList.add('copy-error')
-  console.error('Action:', e.action);
-  console.error('Trigger:', e.trigger);
-});
+  console.error('Action:', e.action)
+  console.error('Trigger:', e.trigger)
+})

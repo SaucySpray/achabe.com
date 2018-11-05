@@ -23,7 +23,7 @@
   align-items: flex-start;
   flex-direction: column;
   width: 34%;
-  height: 36%;
+  height: 40%;
   font-family: "futuraBook", "Arial", sans-serif;
   font-size: 18px;
 }
@@ -55,6 +55,7 @@
 .content--social .linkedin { background-image: url("../media/img/linkedin.svg"); }
 
 .contact--content .copyclip {
+  margin-bottom: 1.5rem;
   cursor: pointer;
   transition: cubic-bezier(0.65, 0.01, 0.46, 1) 0.2s;
 }
